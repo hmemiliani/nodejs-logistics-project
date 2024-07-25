@@ -11,8 +11,18 @@ exports.getAllVehicles = async (req, res) => {
 
 exports.createVehicle = async (req, res) => {
     try {
-        const newVehicle = await vehicleModel.createVehicle(req.body);
-        res.status(201).json(newVehicle);
+        const vehicles = await vehicleModel.getAllVehicles();
+        const newId = vehicles.length > 0 ? Math.max(...vehicles.map(vehicle => vehicle.id)) + 1 : 1;
+        const newVehicle = {
+            id: newId,
+            model: req.body.model,
+            year: req.body.year
+        };
+        const createdVehicle = await vehicleModel.createVehicle(newVehicle);
+        res.status(201).json({
+            message: "Vehicle created successfully",
+            vehicle: createdVehicle
+        });
     } catch (error) {
         res.status(500).send(error.message);
     }

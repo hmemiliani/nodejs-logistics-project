@@ -11,8 +11,17 @@ exports.getAllDrivers = async (req, res) => {
 
 exports.createDriver = async (req, res) => {
     try {
-        const newDriver = await driverModel.createDriver(req.body);
-        res.status(201).json(newDriver);
+        const drivers = await driverModel.getAllDrivers();
+        const newId = drivers.length > 0 ? Math.max(...drivers.map(driver => driver.id)) + 1 : 1;
+        const newDriver = {
+            id: newId,
+            name: req.body.name
+        };
+        const createdDriver = await driverModel.createDriver(newDriver);
+        res.status(201).json({
+            message: "Driver created successfully",
+            driver: createdDriver
+        });
     } catch (error) {
         res.status(500).send(error.message);
     }

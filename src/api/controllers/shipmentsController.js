@@ -9,15 +9,6 @@ exports.getAllShipments = async (req, res) => {
     }
 };
 
-// exports.createShipment = async (req, res) => {
-//     try {
-//         const newShipment = await shipmentModel.createShipment(req.body);
-//         res.status(201).json(newShipment);
-//     } catch (error) {
-//         res.status(500).send(error.message);
-//     }
-// };
-
 exports.createShipment = async (req, res) => {
     try {
         const shipments = await shipmentModel.getAllShipments();
