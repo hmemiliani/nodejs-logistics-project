@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 2,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 3,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 4,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 5,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 6,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    },
+    {
+        "id": 7,
+        "name": "Warehouse Name",
+        "location": "Warehouse Location"
+    }
+]
